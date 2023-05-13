@@ -13,6 +13,14 @@ const Consumer = db.define('consumer', {
     name: {
         type: Sequelize.STRING,
         allowNull: false,
-        field: 'name'
+        field: 'nome'
+    },
+    city: {
+        type: Sequelize.STRING,
+        allowNull: false,
+        field: 'cidade'
     }
+},{
+    timestamps: false,
+    tableName: 'cliente'
 })
