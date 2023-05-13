@@ -4,8 +4,7 @@ const postConsumer = {
     payload: Joi.object({
         id: Joi
             .number()
-            .integer()
-            .required(),
+            .integer(),
         name: Joi
             .string()
             .min(3)
