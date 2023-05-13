@@ -6,8 +6,8 @@ const create = (request, h) => {
     return "created";
 }
 
-const find = (request, h) => {
-    return consumerBusiness.findAll();
+const find = async (request, h) => {
+    return await consumerBusiness.findAll();
 }
 
 const getById =  (request, h) => {

@@ -9,8 +9,8 @@ const save = (consumer) => {
     return consumer;
 };
 
-const findAll = () => {
-    const result = ConsumerModel.findAll();
+const findAll = async () => {
+    const result = await ConsumerModel.findAll();
     return result;
 }
 
