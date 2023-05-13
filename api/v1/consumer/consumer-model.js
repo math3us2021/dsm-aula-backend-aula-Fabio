@@ -1,8 +1,8 @@
 const Sequelize = require('sequelize');
-const db = require('../../config/db');
+const db = require('../../../config/db');
 const { allow } = require('joi');
 
-const Consumer = db.define('consumer', {
+const Consumer = db.define('consumer', { //nome da tabela no sistema
     id: {
         type: Sequelize.INTEGER,
         primaryKey: true,
@@ -22,5 +22,7 @@ const Consumer = db.define('consumer', {
     }
 },{
     timestamps: false,
-    tableName: 'cliente'
-})
+    tableName: 'cliente' //nome da tabela no banco
+});
+
+module.exports = Consumer;

@@ -1,3 +1,5 @@
+const ConsumerModel = require('./consumer-model');
+
 const data = [];
 
 const save = (consumer) => {
@@ -8,7 +10,8 @@ const save = (consumer) => {
 };
 
 const findAll = () => {
-    return data;
+    const result = ConsumerModel.findAll();
+    return result;
 }
 
 const findById = (id) => {
