@@ -11,14 +11,23 @@ const create = async (request, h) => {
 };
 
 const find = async (request, h) => {
-  const result = toPlayload(await consumerBusiness.findAll());
+  try {
+    const options = {
+      pagins: request.query,
+      filter: request.query,
+
+    }
+    const result = toPlayload(await consumerBusiness.findAll(options));
   return h.response(result).code(200);
+  } catch (error) {
+    console.log(error);
+  }
 };
 
-const getById = (request, h) => {
+const getById = async (request, h) => {
   const id = request.params.id;
 
-  const consumer = consumerBusiness.findByid(id);
+  const consumer = await consumerBusiness.findByid(id);
 
   if (consumer) {
     return h.response(consumer).code(200);

@@ -9,13 +9,16 @@ const plugin = {
             {
                 method: "GET",
                 path: "/consumers",
-                handler: find
+                options: {
+                    handler: find,
+                    validate: schema.findAll
+                }
             },
             {
                 method: "GET",
                 path: "/consumers/{id}",
                 options: {
-                    validate: schema.getConsumer,
+                    validate: schema.findByid,
                     handler: getById
                 }
             },

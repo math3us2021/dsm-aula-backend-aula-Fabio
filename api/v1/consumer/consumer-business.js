@@ -5,8 +5,8 @@ const create = (consumer) => {
     return consumerRepository.save(consumer);
 };
 
-const findAll = () => {
-    return consumerRepository.findAll();
+const findAll = (options) => {
+    return consumerRepository.findAll(options);
 }
 
 const findByid = (id) => {
